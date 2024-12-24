@@ -1,0 +1,20 @@
+<div class="student-list">
+    <h2>Students</h2>
+    <button class="btn btn-primary" (click)="openModal()">Add Student</button>
+    <ul class="container">
+      <li *ngFor="let student of students">
+        <span class="col-md-2">{{ student.studentName }}</span>
+        <span class="col-md-6"><div class="pr-2" *ngFor="let course of student.course">{{course.courseName}}</div></span>
+        <button class="btn btn-edit" (click)="editStudent(student)">Edit</button>
+        <button class="btn btn-delete" (click)="deleteStudent(student.studentId)">Delete</button>
+      </li>
+    </ul>
+    <app-modal
+      *ngIf="showModal"
+      [data]="modalData"
+      [courses]="courses"
+      (save)="saveStudent($event)"
+      (close)="showModal = false"
+    ></app-modal>
+  </div>
+  

@@ -1,0 +1,15 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+      <h2>{{ data?.id ? 'Edit Course' : 'Add Course' }}</h2>
+      <form>
+        <div class="mb-4">
+          <label for="courseName" class="col-md-3">Name:</label>
+          <input id="courseName" class="col-md-9" [(ngModel)]="data.courseName" name="courseName" required />
+        </div>
+      </form>
+      <div class="modal-actions">
+        <button class="btn btn-save" (click)="saveChanges()">Save</button>
+        <button class="btn btn-cancel" (click)="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>

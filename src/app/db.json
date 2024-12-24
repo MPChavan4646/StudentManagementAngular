@@ -1,0 +1,12 @@
+{
+    "students": [
+      { "id": 1, "name": "John Doe", "age": 20, "courses": [1, 2] },
+      { "id": 2, "name": "Jane Smith", "age": 22, "courses": [3] }
+    ],
+    "courses": [
+      { "id": 1, "name": "Mathematics", "description": "Learn about numbers and equations." },
+      { "id": 2, "name": "Science", "description": "Explore the natural world." },
+      { "id": 3, "name": "History", "description": "Study past events and civilizations." }
+    ]
+  }
+  

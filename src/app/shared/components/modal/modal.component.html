@@ -1,0 +1,34 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <h2>{{ data?.id ? 'Edit Student' : 'Add Student' }}</h2>
+    <form>
+      <div class="mb-4">
+        <label for="studentName" class="col-md-3">Name:</label>
+        <input id="studentName" class="col-md-9" [(ngModel)]="data.studentName" name="studentName" required />
+      </div>
+      <div class="mb-4">
+        <label for="studentAge" class="col-md-3">Age:</label>
+        <input id="studentAge" class="col-md-9" type="number" [(ngModel)]="data.studentAge" name="studentAge" required />
+      </div>
+      <div class="mb-4">
+        <label class="col-md-3" for="course-list">Courses:</label>
+      <div class="col-md-9"  id="course-list" class="checkbox-group">
+        <div *ngFor="let course of courses">
+          <label>
+            <input
+              type="checkbox"
+              [checked]="isCourseSelected(course.courseId)"
+              (change)="toggleCourse(course.courseId)"
+            />
+            {{ course.courseName }}
+          </label>
+      </div>
+      </div>
+      </div>
+    </form>
+    <div class="modal-actions">
+      <button class="btn btn-save" (click)="saveChanges()">Save</button>
+      <button class="btn btn-cancel" (click)="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
