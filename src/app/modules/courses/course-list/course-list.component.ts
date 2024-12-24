@@ -14,12 +14,12 @@ import { CourseModalComponent } from '../../../shared/components/course-modal/co
   styleUrls: ['./course-list.component.scss'],
 })
 export class CourseListComponent {
-  courses=[{"courseId":1,"courseName":"B.Tech"},{"courseId":2,"courseName":"MCA"},{"courseId":3,"courseName":"BBA"}];
+  courses$;
   showModal = false;
   modalData: any = null;
 
   constructor(private apiService: ApiService) {
-    // this.courses = this.apiService.courses$;
+     this.courses = this.apiService.courses$;
   }
 
   openModal() {
