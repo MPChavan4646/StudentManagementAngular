@@ -2,7 +2,7 @@
     <h2>Students</h2>
     <button class="btn btn-primary" (click)="openModal()">Add Student</button>
     <ul class="container">
-      <li *ngFor="let student of students">
+      <li *ngFor="let student of students$ | async">
         <span class="col-md-2">{{ student.studentName }}</span>
         <span class="col-md-6"><div class="pr-2" *ngFor="let course of student.course">{{course.courseName}}</div></span>
         <button class="btn btn-edit" (click)="editStudent(student)">Edit</button>
@@ -12,7 +12,7 @@
     <app-modal
       *ngIf="showModal"
       [data]="modalData"
-      [courses]="courses"
+      [courses]="courses$ | async"
       (save)="saveStudent($event)"
       (close)="showModal = false"
     ></app-modal>
