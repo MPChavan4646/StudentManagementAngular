@@ -31,7 +31,6 @@ This is a simple Angular application to manage students and courses. It provides
 Clone this repository and install the necessary dependencies.
 
 ```bash
-cd student-course-management-angular
 npm install
 ```
 
